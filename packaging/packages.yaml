@@ -25,9 +25,6 @@ spec:
       - ytt:
           paths:
           - config
-          inline:
-            paths:
-              push_images: "true"
-              push_images_repo: harbor.markalston.net/guestbook/kbld-gb-frontend@sha256:145634de65632c68e40ddebec5a4ed94e28e77ac6b068c1d114a04ad9a7f3323
       deploy:
-      - kapp: {}
+      - kapp:
+          rawOptions: ["--app=guestbook"]

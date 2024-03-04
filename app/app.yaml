@@ -10,9 +10,9 @@ spec:
   serviceAccountName: pkg-gitops-app-sa
   fetch:
   - git:
-      url: https://github.com/malston/guestbook-kapp-gitops.git
+      url: https://github.com/malston/guestbook-kapp-gitops
       ref: origin/main
-      subPath: packaging
+      subPath: "packaging/"
 
   template:
   - ytt: {}

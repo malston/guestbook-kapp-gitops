@@ -1,0 +1,35 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: PackageMetadata
+metadata:
+  name: pkg-standalone.test.carvel.dev
+  namespace: pkg-standalone
+spec:
+  displayName: "Test Package standalone"
+  shortDescription: "Package used for testing"
+---
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: pkg-standalone.test.carvel.dev.1.0.0
+  namespace: pkg-standalone
+spec:
+  refName: pkg-standalone.test.carvel.dev
+  version: 1.0.0
+  template:
+    spec:
+      fetch:
+      - git:
+          url: https://github.com/malston/guestbook-carvel
+          ref: origin/develop
+      template:
+      - ytt:
+          valuesFrom:
+          paths:
+          - config
+          inline:
+            paths:
+              push_images: true
+              push_images_repo: harbor.markalston.net/guestbook/kbld-gb-frontend@sha256:145634de65632c68e40ddebec5a4ed94e28e77ac6b068c1d114a04ad9a7f3323
+      deploy:
+      - kapp:
+          rawOptions: ["-a", "guestbook"]

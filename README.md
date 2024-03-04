@@ -14,5 +14,5 @@ kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/down
 We're going to deploy the app manually for now.
 
 ```sh
-kapp deploy -a pkg-gitops-example -f app/
+kapp -n default deploy -a pkg-gitops-example -f app/
 ```

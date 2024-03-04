@@ -23,9 +23,6 @@ subjects:
 - kind: ServiceAccount
   name: pkg-standalone-sa
   namespace: pkg-standalone
-- kind: ServiceAccount
-  name: pkg-gitops-app-sa
-  namespace: pkg-standalone
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role

@@ -53,3 +53,9 @@ List the installed packages
 ```sh
 kctrl package installed list -n kapp-packages
 ```
+
+Delete the app
+
+```sh
+kapp -n guestbook delete -a guestbook -y
+```

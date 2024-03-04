@@ -6,7 +6,7 @@
 ## Install kapp-controller
 
 ```sh
-kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/download/v0.50.0/release.yml -y
+kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/latest/download/release.yml -y
 ```
 
 ## Deploy the app

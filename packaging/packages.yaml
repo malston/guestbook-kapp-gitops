@@ -23,7 +23,6 @@ spec:
           ref: origin/develop
       template:
       - ytt:
-          valuesFrom:
           paths:
           - config
           inline:

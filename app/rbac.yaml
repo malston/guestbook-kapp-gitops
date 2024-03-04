@@ -3,11 +3,13 @@ kind: ServiceAccount
 metadata:
   name: pkg-gitops-pkgi-sa
   namespace: pkg-gitops
+  annotations:
+    kapp.k14s.io/change-group: "packageinstall-setup"
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: cluster-admin-cluster-role
+  name: pkg-gitops-cluster-admin
   annotations:
     kapp.k14s.io/change-group: "packageinstall-setup"
 rules:
@@ -18,7 +20,7 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: cluster-admin-cluster-role-binding
+  name: pkg-gitops-cluster-admin
   annotations:
     kapp.k14s.io/change-group: "packageinstall-setup"
 subjects:
@@ -28,4 +30,4 @@ subjects:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: cluster-admin-cluster-role
+  name: pkg-gitops-cluster-admin

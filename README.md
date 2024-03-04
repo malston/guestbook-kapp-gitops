@@ -9,5 +9,10 @@
 kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/download/v0.50.0/release.yml -y
 ```
 
+## Deploy the app
 
-harbor.markalston.net/guestbook/kbld-gb-frontend@sha256:145634de65632c68e40ddebec5a4ed94e28e77ac6b068c1d114a04ad9a7f3323
+We're going to deploy the app manually for now.
+
+```sh
+kapp deploy -a pkg-gitops -f app/
+```

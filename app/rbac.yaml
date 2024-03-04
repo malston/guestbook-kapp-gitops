@@ -21,7 +21,7 @@ metadata:
   namespace: pkg-gitops
 subjects:
 - kind: ServiceAccount
-  name: pkg-gitops
+  name: pkg-gitops-app-sa
   namespace: pkg-gitops
 roleRef:
   apiGroup: rbac.authorization.k8s.io

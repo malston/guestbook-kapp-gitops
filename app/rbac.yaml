@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: pkg-gitops-pkgi-sa
-  namespace: pkg-gitops
+  name: guestbook-sa
+  namespace: kapp-packages
   annotations:
     kapp.k14s.io/change-group: "packageinstall-setup"
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: pkg-gitops-cluster-admin
+  name: guestbook-cluster-admin
   annotations:
     kapp.k14s.io/change-group: "packageinstall-setup"
 rules:
@@ -20,14 +20,14 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: pkg-gitops-cluster-admin
+  name: guestbook-cluster-admin
   annotations:
     kapp.k14s.io/change-group: "packageinstall-setup"
 subjects:
 - kind: ServiceAccount
-  name: pkg-gitops-pkgi-sa
-  namespace: pkg-gitops
+  name: guestbook-sa
+  namespace: kapp-packages
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: pkg-gitops-cluster-admin
+  name: guestbook-cluster-admin

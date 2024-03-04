@@ -1,19 +1,20 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: PackageMetadata
 metadata:
-  name: pkg-standalone.test.carvel.dev
-  namespace: pkg-standalone
+  name: guestbook.test.carvel.dev
+  namespace: kapp-packages
 spec:
-  displayName: "Test Package standalone"
-  shortDescription: "Package used for testing"
+  displayName: guestbook
+  shortDescription: Package used for deploying guestbook app
+  longDescription: Package that deploys the guestbook application from https://github.com/malston/guestbook-kapp-gitops.git
 ---
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: pkg-standalone.test.carvel.dev.1.0.0
-  namespace: pkg-standalone
+  name: guestbook.test.carvel.dev.1.0.0
+  namespace: kapp-packages
 spec:
-  refName: pkg-standalone.test.carvel.dev
+  refName: guestbook.test.carvel.dev
   version: 1.0.0
   template:
     spec:

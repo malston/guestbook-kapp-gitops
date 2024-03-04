@@ -1,27 +1,27 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
-  name: pkg-standalone-demo
-  namespace: pkg-standalone
+  name: guestbook
+  namespace: kapp-packages
 spec:
-  serviceAccountName: pkg-standalone-sa
+  serviceAccountName: guestbook-sa
   packageRef:
-    refName: pkg-standalone.test.carvel.dev
+    refName: guestbook.test.carvel.dev
     versionSelection:
       constraints: 1.0.0
   values:
   - secretRef:
-      name: pkg-standalone-demo-values
+      name: guestbook-values
 ---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: pkg-standalone-demo-values
-  namespace: pkg-standalone
+  name: guestbook-values
+  namespace: kapp-packages
 stringData:
   values.yml: |
     redis_port: 6379
     katacoda: false
     push_images: false
     push_images_repo: docker.io/dkalinin
-    namespace: pkg-standalone
+    namespace: guestbook

@@ -26,5 +26,4 @@ spec:
           paths:
           - config
       deploy:
-      - kapp:
-          rawOptions: ["--app=guestbook"]
+      - kapp: {}

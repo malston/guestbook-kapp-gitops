@@ -1,4 +1,4 @@
-# guestbook-kapp-gitops
+# Guestbook Packaging
 
 - app - contains the manifests to deploy the guestbook app using the manifests under packaging
 - packaging - contains the manifests to install the guestbook app as a package
@@ -9,7 +9,7 @@
 kapp deploy -a kc -f https://github.com/carvel-dev/kapp-controller/releases/latest/download/release.yml -y
 ```
 
-## Deploy the app
+## Deploy
 
 We're going to deploy the app manually for now.
 
@@ -17,6 +17,8 @@ We're going to deploy the app manually for now.
 kubectl create ns guestbook
 kapp -n guestbook deploy -a guestbook -f app/ -y
 ```
+
+## Validate Package/App
 
 List the apps
 
@@ -58,4 +60,10 @@ Delete the app
 
 ```sh
 kapp -n guestbook delete -a guestbook -y
+```
+
+If that times out because of finalizers, try deleting the `packageinstall` with the `noop` flag
+
+```sh
+kctrl app delete -a guestbook -n kapp-packages --noop
 ```

@@ -6,7 +6,7 @@ metadata:
 spec:
   displayName: guestbook
   shortDescription: Package used for deploying guestbook app
-  longDescription: Package that deploys the guestbook application from https://github.com/malston/guestbook-kapp-gitops.git
+  longDescription: Package that deploys the guestbook application from https://github.com/malston/guestbook-packaging.git
 ---
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package

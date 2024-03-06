@@ -10,9 +10,9 @@ spec:
   serviceAccountName: guestbook-sa
   fetch:
   - git:
-      url: https://github.com/malston/guestbook-packaging
+      url: https://github.com/malston/guestbook-package
       ref: origin/main
-      subPath: "packaging/"
+      subPath: packaging
 
   template:
   - ytt: {}

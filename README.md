@@ -1,4 +1,4 @@
-# Guestbook Packaging
+# Guestbook Package
 
 - app - contains the manifests to deploy the guestbook app using the manifests under packaging
 - packaging - contains the manifests to install the guestbook app as a package
